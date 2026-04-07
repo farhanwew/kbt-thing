@@ -127,7 +127,7 @@ export default function App() {
             <div className="flex items-center gap-4 shrink-0">
               <Leaf className="w-8 h-8 text-[#4a5d23]" />
               <span className="font-mono text-sm tracking-widest text-[#4a5d23] uppercase leading-none mt-1">
-                Pitch Deck
+                {t("Pitch Deck", "Presentasi")}
               </span>
             </div>
             <div className="flex-1 flex flex-col justify-center max-w-5xl">
@@ -135,8 +135,10 @@ export default function App() {
                 basalbuddy.
               </h1>
               <p className="text-3xl text-stone-600 font-light max-w-4xl leading-snug">
-                democratizing canopy health & early ganoderma detection for
-                independent palm smallholders.
+                {t(
+                  "democratizing canopy health & early ganoderma detection for independent palm smallholders.",
+                  "kesehatan kanopi & deteksi dini ganoderma untuk petani sawit."
+                )}
               </p>
             </div>
             <div className="shrink-0">
@@ -174,9 +176,10 @@ export default function App() {
                     {t("The Silent Killer", "Pembunuh Senyap")}
                   </h3>
                   <p className="text-stone-600 text-xl font-light leading-relaxed flex-1 overflow-hidden">
-                    Ganoderma (Basal Stem Rot) ruins yields and lingers in soil.
-                    By the time visual symptoms appear to the human eye, the tree
-                    is already dead and infecting the surrounding plot.
+                    {t(
+                      "Ganoderma (Basal Stem Rot) ruins yields and lingers in soil. By the time visual symptoms appear to the human eye, the tree is already dead and infecting the surrounding plot.",
+                      "Ganoderma (Busuk Pangkal Batang) menghancurkan hasil panen dan bertahan di tanah. Pada saat gejala visual muncul di mata manusia, pohon tersebut sudah mati dan menulari area sekitarnya."
+                    )}
                   </p>
                 </div>
                 <div className="flex-1 border-t-2 border-stone-900 pt-6 flex flex-col">
@@ -187,9 +190,10 @@ export default function App() {
                     {t("The Hardware Barrier", "Kendala Perangkat Keras")}
                   </h3>
                   <p className="text-stone-600 text-xl font-light leading-relaxed flex-1 overflow-hidden">
-                    True multispectral drones cost upwards of $10,000.
-                    Smallholder farmers—who own 41% of plantations—literally
-                    cannot afford the hardware needed to detect stress early.
+                    {t(
+                      "True multispectral drones cost upwards of $10,000. Smallholder farmers—who own 41% of plantations—literally cannot afford the hardware needed to detect stress early.",
+                      "Drone multispektral yang sebenarnya berharga lebih dari $10.000. Petani kecil—yang memiliki 41% perkebunan—benar-benar tidak mampu membeli perangkat keras yang dibutuhkan untuk mendeteksi stres sejak dini."
+                    )}
                   </p>
                 </div>
               </div>
@@ -231,8 +235,10 @@ export default function App() {
                   {t("RGB Acquisition", "Akuisisi RGB")}
                 </h4>
                 <p className="text-stone-600 text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
-                  Farmer flies any commercial consumer drone (e.g., DJI Mini). We
-                  rely on any standard spatial resolution, upscaling when needed.
+                  {t(
+                    "Farmer flies any commercial consumer drone (e.g., DJI Mini). We rely on any standard spatial resolution, upscaling when needed.",
+                    "Petani menerbangkan drone konsumen komersial apa pun (misalnya, DJI Mini). Kami mengandalkan resolusi spasial standar apa pun, melakukan peningkatan resolusi jika diperlukan."
+                  )}
                 </p>
                 <div className="mt-auto font-mono text-xs text-stone-400 bg-stone-100 p-3 shrink-0 leading-relaxed">
                   {t("// No radiometric calibration or IR-cut filter removals needed.", "// Tidak perlu kalibrasi radiometrik atau filter IR-cut.")}
@@ -248,8 +254,10 @@ export default function App() {
                   {t("Spectral Approximation", "Aproksimasi Spektral")}
                 </h4>
                 <p className="text-stone-600 text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
-                  Pipeline uses a CycleGAN to approximate NIR/Red-Edge bands from
-                  structural RGB cues, fed into a ViT for segmentation.
+                  {t(
+                    "Pipeline uses a CycleGAN to approximate NIR/Red-Edge bands from structural RGB cues, fed into a ViT for segmentation.",
+                    "Alur kerja menggunakan CycleGAN untuk memperkirakan pita NIR/Red-Edge dari petunjuk RGB struktural, yang dimasukkan ke ViT untuk segmentasi."
+                  )}
                 </p>
                 <div className="mt-auto font-mono text-xs text-[#8b5a2b] bg-[#e8e4db] p-3 shrink-0 leading-relaxed">
                   {t("// This Image-to-image translation bridges the hardware gap.", "// Terjemahan gambar ini menjembatani kendala perangkat keras.")}
@@ -265,8 +273,10 @@ export default function App() {
                   {t("Geo-Registered Inference", "Inferensi Terdaftar Geo")}
                 </h4>
                 <p className="text-[#c2d49a] text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
-                  Platform generates a segmented GeoTIFF heatmap, plotting exact
-                  RTK coordinates of anomalous canopies.
+                  {t(
+                    "Platform generates a segmented GeoTIFF heatmap, plotting exact RTK coordinates of anomalous canopies.",
+                    "Platform menghasilkan heatmap GeoTIFF yang disegmentasi, memetakan koordinat RTK persis dari kanopi yang tidak normal."
+                  )}
                 </p>
                 <div className="mt-auto font-mono text-xs text-[#4a5d23] bg-[#c2d49a] p-3 shrink-0 leading-relaxed">
                   {t("// Targeted culling minimizes collateral yield loss.", "// Penebangan yang ditargetkan meminimalkan hilangnya hasil.")}
@@ -322,7 +332,7 @@ export default function App() {
                     >
                       <div className="pt-3 text-center">
                         <div className="text-[#8b5a2b] font-mono text-[9px] uppercase tracking-widest leading-none">
-                          Endemic
+                          {t("Endemic", "Endemik")}
                         </div>
                         <div className="text-stone-900 font-black text-xl leading-none mt-1.5">
                           Rp 130B
@@ -353,9 +363,10 @@ export default function App() {
                     {t("The Data Moat", "Parit Data")}
                   </h3>
                   <p className="text-sm text-stone-400 font-light leading-relaxed">
-                    Farmers receive bankable replanting data. Basalbuddy acquires
-                    massive visual datasets to continuously fine-tune our base
-                    models.
+                    {t(
+                      "Farmers receive bankable replanting data. Basalbuddy acquires massive visual datasets to continuously fine-tune our base models.",
+                      "Petani menerima data peremajaan yang bankable. Basalbuddy memperoleh kumpulan data visual besar untuk terus menyempurnakan model dasar kami."
+                    )}
                   </p>
                 </div>
               </div>
@@ -369,7 +380,7 @@ export default function App() {
                   <div className="flex gap-6 flex-1 min-h-0">
                     <div className="flex-1 border-t-2 border-stone-300 pt-4 flex flex-col">
                       <div className="text-stone-500 text-[11px] uppercase tracking-widest font-mono mb-2 leading-none">
-                        Independent
+                        {t("Independent", "Mandiri")}
                       </div>
                       <div className="text-2xl font-black text-stone-900 leading-none mb-1">
                         Rp 25k
@@ -385,7 +396,7 @@ export default function App() {
 
                     <div className="flex-1 border-t-2 border-[#4a5d23] pt-4 flex flex-col bg-[#f9fafa] -mx-3 px-3 pb-3">
                       <div className="text-[#4a5d23] text-[11px] uppercase tracking-widest font-mono mb-2 flex justify-between items-center leading-none">
-                        <span>Koperasi</span>
+                        <span>{t("Cooperative", "Koperasi")}</span>
                         <span
                           className="bg-[#4a5d23] text-white px-1 py-0.5 text-[9px] font-mono uppercase"
                           style={{ lineHeight: 1 }}
@@ -408,7 +419,7 @@ export default function App() {
 
                     <div className="flex-1 border-t-2 border-stone-300 pt-4 flex flex-col">
                       <div className="text-stone-500 text-[11px] uppercase tracking-widest font-mono mb-2 leading-none">
-                        Enterprise
+                        {t("Enterprise", "Perusahaan")}
                       </div>
                       <div className="text-2xl font-black text-stone-900 leading-none mb-1">
                         Rp 150m
@@ -430,11 +441,13 @@ export default function App() {
                     <Globe className="w-5 h-5 text-[#8b5a2b] shrink-0 mt-0.5" />
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-widest text-stone-500 mb-1.5 leading-none">
-                        Impact
+                        {t("Impact", "Dampak")}
                       </div>
                       <p className="text-sm text-stone-800 font-light leading-snug">
-                        Optimizes yield for the lower-middle class, directly
-                        reducing deforestation pressure.
+                        {t(
+                          "Optimizes yield for the lower-middle class, directly reducing deforestation pressure.",
+                          "Mengoptimalkan hasil untuk kelas menengah ke bawah, secara langsung mengurangi tekanan deforestasi."
+                        )}
                       </p>
                     </div>
                   </div>
@@ -442,11 +455,13 @@ export default function App() {
                     <TrendingUp className="w-5 h-5 text-[#4a5d23] shrink-0 mt-0.5" />
                     <div>
                       <div className="font-mono text-[10px] uppercase tracking-widest text-stone-500 mb-1.5 leading-none">
-                        Financial
+                        {t("Financial", "Keuangan")}
                       </div>
                       <p className="text-sm text-stone-800 font-light leading-snug">
-                        Pure software play minimizes CAPEX. High margin scaling
-                        via cloud inference.
+                        {t(
+                          "Pure software play minimizes CAPEX. High margin scaling via cloud inference.",
+                          "Berbasis perangkat lunak meminimalkan CAPEX. Skalabilitas margin tinggi melalui inferensi cloud."
+                        )}
                       </p>
                     </div>
                   </div>
@@ -462,7 +477,7 @@ export default function App() {
             <div className="flex items-center gap-4 shrink-0">
               <Sprout className="w-8 h-8 text-[#4a5d23]" />
               <span className="font-mono text-sm tracking-widest text-[#4a5d23] uppercase leading-none mt-1">
-                Farmer Briefing
+                {t("Farmer Briefing", "")}
               </span>
             </div>
             <div className="flex-1 flex flex-col justify-center max-w-5xl">
@@ -476,7 +491,7 @@ export default function App() {
             <div className="shrink-0">
               <div className="w-full h-px bg-stone-300 mb-4 mt-8" />
               <div className="flex justify-between font-mono text-xs text-stone-500 uppercase tracking-widest leading-none">
-                <span>Farmer Facing</span>
+                <span>{t("Farmer Facing", "Untuk Petani")}</span>
                 <span>2026</span>
               </div>
             </div>
@@ -494,7 +509,7 @@ export default function App() {
                 className="font-mono text-sm tracking-widest text-[#8b5a2b] uppercase border border-[#8b5a2b] px-3 py-1.5 shrink-0 whitespace-nowrap"
                 style={{ lineHeight: 1 }}
               >
-                The Threat
+                {t("The Threat", "Ancaman")}
               </span>
             </div>
 
@@ -505,7 +520,7 @@ export default function App() {
                     <Activity className="w-10 h-10" />
                   </div>
                   <h3 className="text-3xl font-bold text-stone-900 tracking-tight mb-4 shrink-0">
-                    {t("The Silent Thief (Ganoderma)", "Pencuri Senyap (Ganoderma)")}
+                    {t("The Silent Thief (Ganoderma)", "Pencuri Tersembunyi (Ganoderma)")}
                   </h3>
                   <p className="text-stone-600 text-xl font-light leading-relaxed flex-1 overflow-hidden">
                     {t("Ganoderma spreads quietly underground. By the time you notice yellowing fronds or wilting, the tree is gone—and it's probably already infected its neighbors.", "Ganoderma menyebar diam-diam di bawah tanah. Saat Anda melihat pelepah menguning atau layu, pohonnya sudah mati—dan kemungkinan sudah menulari sekitarnya.")}
@@ -519,7 +534,7 @@ export default function App() {
                     {t("Blind Guessing", "Menebak Buta")}
                   </h3>
                   <p className="text-stone-600 text-xl font-light leading-relaxed flex-1 overflow-hidden">
-                    {t("Checking trees by foot on large plots is too slow, and specialized farm drones are too expensive for most independent smallholders to buy themselves.", "Memeriksa pohon jalan kaki di lahan luas sangat lambat, dan drone perkebunan khusus sangat mahal dibeli rata-rata petani mandiri.")}
+                    {t("Checking trees by foot on large plots is too slow, and specialized farm drones are too expensive for most independent smallholders to buy themselves.", "Memeriksa pohon di lahan luas sangat lambat, dan drone perkebunan khusus sangat mahal untuk dibeli mayoritas petani mandiri.")}
                   </p>
                 </div>
               </div>
@@ -547,14 +562,14 @@ export default function App() {
                 className="font-mono text-sm tracking-widest text-[#4a5d23] uppercase border border-[#4a5d23] px-3 py-1.5 shrink-0 whitespace-nowrap"
                 style={{ lineHeight: 1 }}
               >
-                Our Process
+                {t("Our Process", "Proses Kami")}
               </span>
             </div>
 
             <div className="flex gap-6 flex-1 min-h-0">
               <div className="flex-1 border border-stone-300 p-6 flex flex-col bg-white">
                 <div className="text-[#8b5a2b] font-mono text-xl mb-6 border-b border-stone-200 pb-3 shrink-0">
-                  01. Fly & Snap
+                  {t("01. Fly & Snap", "01. Terbangkan & Potret")}
                 </div>
                 <Smartphone className="w-10 h-10 text-stone-800 mb-4 shrink-0" />
                 <h4 className="font-bold text-2xl text-stone-900 tracking-tight mb-3 shrink-0">
@@ -564,20 +579,20 @@ export default function App() {
                   {t("We (or you) fly a basic consumer drone over your plantation. It literally just records normal video and takes regular photos.", "Kami (atau Anda) menerbangkan drone biasa di kebun Anda. Cukup merekam video normal dan jepret foto standar.")}
                 </p>
                 <div className="mt-auto font-mono text-xs text-stone-400 bg-stone-100 p-3 shrink-0 leading-relaxed">
-                  {t("No fancy, expensive multispectral cameras needed.", "Tanpa butuh kamera multispektral super mahal.")}
+                  {t("No fancy, expensive multispectral cameras needed.", "Tanpa butuh kamera super mahal.")}
                 </div>
               </div>
 
               <div className="flex-1 border border-stone-300 p-6 flex flex-col bg-[#f4f1ea]">
                 <div className="text-[#8b5a2b] font-mono text-xl mb-6 border-b border-stone-300 pb-3 shrink-0">
-                  02. We Analyze
+                  {t("02. We Analyze", "02. Kami Analisis")}
                 </div>
                 <Activity className="w-10 h-10 text-stone-800 mb-4 shrink-0" />
                 <h4 className="font-bold text-2xl text-stone-900 tracking-tight mb-3 shrink-0">
                   {t("AI Detects Sickness", "AI Mencari Penyakit")}
                 </h4>
                 <p className="text-stone-600 text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
-                  Our system processes the images, using AI to &quot;look deeper&quot; and see early signs of canopy stress that the human eye misses.
+                  {t('Our system processes the images, using AI to "look deeper" and see early signs of canopy stress that the human eye misses.', 'Sistem kami memproses gambar, menggunakan AI untuk "melihat lebih dalam" dan menemukan tanda awal stres kanopi yang tak terlihat mata.')}
                 </p>
                 <div className="mt-auto font-mono text-xs text-[#8b5a2b] bg-[#e8e4db] p-3 shrink-0 leading-relaxed">
                   {t("Spotting the hidden visual cues of disease.", "Baca petunjuk visual penyakit yang tersembunyi.")}
@@ -586,14 +601,14 @@ export default function App() {
 
               <div className="flex-1 border border-[#4a5d23] p-6 flex flex-col bg-[#4a5d23] text-stone-100">
                 <div className="text-[#a3b87a] font-mono text-xl mb-6 border-b border-[#5f7434] pb-3 shrink-0">
-                  03. You Take Action
+                  {t("03. You Take Action", "03. Anda Bertindak")}
                 </div>
                 <ShieldCheck className="w-10 h-10 text-[#c2d49a] mb-4 shrink-0" />
                 <h4 className="font-bold text-2xl text-white tracking-tight mb-3 shrink-0">
                   {t("Get The Map", "Dapatkan Peta")}
                 </h4>
                 <p className="text-[#c2d49a] text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
-                  {t("You receive a clear map pointing exactly to which trees are in trouble. Cull the sick palms immediately and save the healthy ones.", "Anda terima peta jelas yang tunjukkan pasti letak pohon sakit. Tebang yang stres langsung amankan pohon sehatmu.")}
+                  {t("You receive a clear map pointing exactly to which trees are in trouble. Cull the sick palms immediately and save the healthy ones.", "Anda terima peta jelas yang tunjukkan pasti letak pohon sakit. Tebang yang stres, amankan pohon yang sehat.")}
                 </p>
                 <div className="mt-auto font-mono text-xs text-[#4a5d23] bg-[#c2d49a] p-3 shrink-0 leading-relaxed">
                   {t("Precise removal. Less spreading. Better harvest.", "Tebang persis. Minim penyebaran. Panen lebih melimpah.")}
@@ -608,13 +623,13 @@ export default function App() {
           <div className="h-full flex flex-col p-12">
             <div className="flex items-start justify-between mb-8 shrink-0">
               <h2 className="text-5xl font-black text-stone-900 tracking-tighter leading-none">
-                {t("see it in action.", "lihat aksinya.")}
+                {t("see it in action.", "lihat cara kerjanya.")}
               </h2>
               <span
                 className="font-mono text-sm tracking-widest text-[#4a5d23] uppercase border border-[#4a5d23] px-3 py-1.5 shrink-0 whitespace-nowrap"
                 style={{ lineHeight: 1 }}
               >
-                Scan To Detection
+                {t("Scan To Detection", "Pemindaian Hingga Deteksi")}
               </span>
             </div>
 
@@ -622,7 +637,7 @@ export default function App() {
               <div className="flex-1 flex flex-col gap-3">
                 <div className="bg-[#f4f1ea] border border-stone-300 p-4 shrink-0">
                   <h4 className="font-bold text-lg text-stone-900 leading-none mb-1">
-                    01. RGB Scan
+                    {t("01. RGB Scan", "01. Pemindaian RGB")}
                   </h4>
                   <p className="text-sm text-stone-600 font-light leading-snug">
                     {t("Standard commercial drone imagery.", "Citra drone komersial standar.")}
@@ -644,7 +659,7 @@ export default function App() {
               <div className="flex-1 flex flex-col gap-3">
                 <div className="bg-[#f4f1ea] border border-stone-300 p-4 shrink-0">
                   <h4 className="font-bold text-lg text-stone-900 leading-none mb-1">
-                    02. NIR Generation
+                    {t("02. NIR Generation", "02. Generasi NIR")}
                   </h4>
                   <p className="text-sm text-stone-600 font-light leading-snug">
                     {t("AI synthesizes near-infrared data.", "AI memproses data simulasi inframerah-dekat.")}
@@ -666,10 +681,10 @@ export default function App() {
               <div className="flex-1 flex flex-col gap-3">
                 <div className="bg-[#4a5d23] border border-[#5f7434] p-4 shrink-0">
                   <h4 className="font-bold text-lg text-white leading-none mb-1">
-                    03. Detection
+                    {t("03. Detection", "03. Deteksi")}
                   </h4>
                   <p className="text-sm text-[#c2d49a] font-light leading-snug">
-                    {t("Sick canopy flagged for removal.", "Kanopi sakit ditandai untuk culling.")}
+                    {t("Sick canopy flagged for removal.", "Kanopi sakit ditandai untuk penebangan.")}
                   </p>
                 </div>
                 <div className="flex-1 border border-[#4a5d23] overflow-hidden relative bg-stone-900 flex items-center justify-center p-2">
@@ -701,13 +716,13 @@ export default function App() {
                   {t("Protecting Your Livelihood", "Melindungi Mata Pencaharian Anda")}
                 </h3>
                 <p className="text-lg text-stone-600 font-light leading-relaxed mb-6">
-                  {t("Every tree you lose is money out of your pocket for years to come. By identifying sick trees early, you can surgically remove them and treat the surroundings, preventing the disease from jumping to your healthy, high-yield palms.", "Setiap pohon mati berarti uang Anda raib di masa mendatang. Dengan deteksi sakit awal, Anda dapat usir penyakit dari lingkungan dan dicegah lompat ke sawit sehat rimbun Anda.")}
+                  {t("Every tree you lose is money out of your pocket for years to come. By identifying sick trees early, you can surgically remove them and treat the surroundings, preventing the disease from jumping to your healthy, high-yield palms.", "Setiap pohon mati berarti kerugian di masa mendatang. Dengan deteksi sakit awal, Anda dapat usir penyakit dari lingkungan dan mencegahnya menyebar ke sawit yang sehat.")}
                 </p>
                 
                 <div className="bg-[#f4f1ea] border-l-4 border-[#8b5a2b] p-4 mt-auto">
                   <h4 className="font-bold text-lg text-stone-800 mb-2">{t("Be Replant-Ready", "Siap Peremajaan (PSR)")}</h4>
                   <p className="text-sm text-stone-600 leading-relaxed">
-                    {t("Our reports provide the exact data needed if you are applying for PSR (Peremajaan Sawit Rakyat) replanting funds. Hand them the map, prove the need, and get funded faster.", "Laporan kami jadi dokumen pas permohonan pendanaan PSR (Peremajaan Sawit Rakyat). Serahkan petanya, buktikan masalah, lalu peroleh pendanaan lancar.")}
+                    {t("Our reports provide the exact data needed if you are applying for PSR (Peremajaan Sawit Rakyat) replanting funds. Hand them the map, prove the need, and get funded faster.", "Laporan kami membantu permohonan pendanaan PSR (Peremajaan Sawit Rakyat). Serahkan petanya, buktikan masalah, dan dapatkan pendanaan lebih cepat.")}
                   </p>
                 </div>
               </div>
@@ -721,7 +736,7 @@ export default function App() {
                   <div className="flex gap-6 flex-1 min-h-0">
                     <div className="flex-1 border-t-2 border-[#4a5d23] pt-4 flex flex-col bg-[#f9fafa] -mx-3 px-3 pb-3">
                       <div className="text-[#4a5d23] text-[11px] uppercase tracking-widest font-mono mb-2 flex justify-between items-center leading-none">
-                        <span>Individual Farm</span>
+                        <span>{t("Individual Farm", "Lahan Pribadi")}</span>
                       </div>
                       <div className="text-2xl font-black text-stone-900 leading-none mb-1">
                         Rp 25k
@@ -738,7 +753,7 @@ export default function App() {
 
                     <div className="flex-1 border-t-2 border-stone-300 pt-4 flex flex-col">
                       <div className="text-stone-500 text-[11px] uppercase tracking-widest font-mono mb-2 leading-none">
-                        Through Your Koperasi
+                        {t("Through Your Koperasi", "Melalui Koperasi Anda")}
                       </div>
                       <div className="text-2xl font-black text-stone-900 leading-none mb-1">
                         Rp 2.5m
@@ -747,9 +762,9 @@ export default function App() {
                         /month
                       </div>
                       <ul className="text-sm text-stone-600 space-y-2 font-light flex-1 overflow-hidden">
-                        <li>{t("• Up to 500 hectares covered together", "• Boleh daftar sampai 500 hektar bareng")}</li>
-                        <li>{t("• Greatly reduced cost per hectare", "• Harga jauh bersahabat per hektar")}</li>
-                        <li>{t("• Get regular monthly health checkups", "• Terima pemeriksaan rutin berulang")}</li>
+                        <li>{t("• Up to 500 hectares covered together", "• Boleh daftar sampai 500 hektar bersama")}</li>
+                        <li>{t("• Greatly reduced cost per hectare", "• Harga jauh lebih terjangkau per hektar")}</li>
+                        <li>{t("• Get regular monthly health checkups", "• Terima pemeriksaan rutin bulanan")}</li>
                       </ul>
                     </div>
                   </div>
@@ -757,7 +772,7 @@ export default function App() {
                 
                 <div className="bg-stone-900 p-5 border border-stone-800 shrink-0 text-center">
                   <h3 className="font-mono text-xs uppercase tracking-widest text-[#a3b87a] mb-2 leading-none">
-                    Next Step
+                    {t("Next Step", "Langkah Selanjutnya")}
                   </h3>
                   <p className="text-sm text-stone-400 font-light leading-relaxed">
                     {t("Chat with us today to schedule your first flight and see the health of your plot.", "Mari ngobrol dengan kami sekarang buat atur jadwal survey awal dari plot Anda.")}
