@@ -15,17 +15,27 @@ import {
 } from 'lucide-react';
 import { domToJpeg } from 'modern-screenshot';
 
-const slides = [
+const investorSlides = [
   { id: 'title' },
   { id: 'problem' },
   { id: 'solution' },
   { id: 'business_model' },
 ];
 
+const farmerSlides = [
+  { id: 'title_farmer' },
+  { id: 'problem_farmer' },
+  { id: 'solution_farmer' },
+  { id: 'value_farmer' },
+];
+
 export default function App() {
+  const [audience, setAudience] = useState('investor');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isExporting, setIsExporting] = useState(false);
   const [showExport, setShowExport] = useState(false);
+
+  const slides = audience === 'investor' ? investorSlides : farmerSlides;
 
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
@@ -439,6 +449,237 @@ export default function App() {
           </div>
         );
 
+      case 'title_farmer':
+        return (
+          <div className="flex flex-col h-full justify-between p-12">
+            <div className="flex items-center gap-4 shrink-0">
+              <Sprout className="w-8 h-8 text-[#4a5d23]" />
+              <span className="font-mono text-sm tracking-widest text-[#4a5d23] uppercase leading-none mt-1">
+                Farmer Briefing
+              </span>
+            </div>
+            <div className="flex-1 flex flex-col justify-center max-w-5xl">
+              <h1 className="text-[7.5rem] font-black text-stone-900 tracking-tighter leading-none mb-6">
+                basalbuddy.
+              </h1>
+              <p className="text-3xl text-stone-600 font-light max-w-4xl leading-snug">
+                know which trees are sick before it's too late. protect your yield with simple drone flights.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <div className="w-full h-px bg-stone-300 mb-4 mt-8" />
+              <div className="flex justify-between font-mono text-xs text-stone-500 uppercase tracking-widest leading-none">
+                <span>Farmer Facing</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'problem_farmer':
+        return (
+          <div className="h-full flex flex-col p-12 bg-[#f4f1ea]">
+            <div className="flex items-start justify-between mb-8 shrink-0">
+              <h2 className="text-5xl font-black text-stone-900 tracking-tighter leading-none">
+                what's eating your yield?
+              </h2>
+              <span
+                className="font-mono text-sm tracking-widest text-[#8b5a2b] uppercase border border-[#8b5a2b] px-3 py-1.5 shrink-0 whitespace-nowrap"
+                style={{ lineHeight: 1 }}
+              >
+                The Threat
+              </span>
+            </div>
+
+            <div className="flex flex-col flex-1 min-h-0 gap-8">
+              <div className="flex gap-12 flex-1 min-h-0">
+                <div className="flex-1 border-t-2 border-stone-900 pt-6 flex flex-col">
+                  <div className="text-[#8b5a2b] mb-4">
+                    <Activity className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-stone-900 tracking-tight mb-4 shrink-0">
+                    The Silent Thief (Ganoderma)
+                  </h3>
+                  <p className="text-stone-600 text-xl font-light leading-relaxed flex-1 overflow-hidden">
+                    Ganoderma spreads quietly underground. By the time you notice yellowing fronds or wilting, the tree is gone—and it's probably already infected its neighbors.
+                  </p>
+                </div>
+                <div className="flex-1 border-t-2 border-stone-900 pt-6 flex flex-col">
+                  <div className="text-[#4a5d23] mb-4">
+                    <Wind className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-stone-900 tracking-tight mb-4 shrink-0">
+                    Blind Guessing
+                  </h3>
+                  <p className="text-stone-600 text-xl font-light leading-relaxed flex-1 overflow-hidden">
+                    Checking trees by foot on large plots is too slow, and specialized farm drones are too expensive for most independent smallholders to buy themselves.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#e8e4db] p-6 border border-stone-300 flex items-center justify-between shrink-0">
+                <span className="font-mono text-base text-stone-500 uppercase tracking-widest leading-none">
+                  The Bottom Line
+                </span>
+                <span className="text-2xl text-stone-800 font-medium leading-none">
+                  If you can't see the sickness early, you can't stop the spread.
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'solution_farmer':
+        return (
+          <div className="h-full flex flex-col p-12">
+            <div className="flex items-start justify-between mb-8 shrink-0">
+              <h2 className="text-5xl font-black text-stone-900 tracking-tighter leading-none">
+                how we help.
+              </h2>
+              <span
+                className="font-mono text-sm tracking-widest text-[#4a5d23] uppercase border border-[#4a5d23] px-3 py-1.5 shrink-0 whitespace-nowrap"
+                style={{ lineHeight: 1 }}
+              >
+                Our Process
+              </span>
+            </div>
+
+            <div className="flex gap-6 flex-1 min-h-0">
+              <div className="flex-1 border border-stone-300 p-6 flex flex-col bg-white">
+                <div className="text-[#8b5a2b] font-mono text-xl mb-6 border-b border-stone-200 pb-3 shrink-0">
+                  01. Fly & Snap
+                </div>
+                <Smartphone className="w-10 h-10 text-stone-800 mb-4 shrink-0" />
+                <h4 className="font-bold text-2xl text-stone-900 tracking-tight mb-3 shrink-0">
+                  A Simple Drone Flight
+                </h4>
+                <p className="text-stone-600 text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
+                  We (or you) fly a basic consumer drone over your plantation. It literally just records normal video and takes regular photos.
+                </p>
+                <div className="mt-auto font-mono text-xs text-stone-400 bg-stone-100 p-3 shrink-0 leading-relaxed">
+                  No fancy, expensive multispectral cameras needed.
+                </div>
+              </div>
+
+              <div className="flex-1 border border-stone-300 p-6 flex flex-col bg-[#f4f1ea]">
+                <div className="text-[#8b5a2b] font-mono text-xl mb-6 border-b border-stone-300 pb-3 shrink-0">
+                  02. We Analyze
+                </div>
+                <Activity className="w-10 h-10 text-stone-800 mb-4 shrink-0" />
+                <h4 className="font-bold text-2xl text-stone-900 tracking-tight mb-3 shrink-0">
+                  AI Detects Sickness
+                </h4>
+                <p className="text-stone-600 text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
+                  Our system processes the images, using AI to &quot;look deeper&quot; and see early signs of canopy stress that the human eye misses.
+                </p>
+                <div className="mt-auto font-mono text-xs text-[#8b5a2b] bg-[#e8e4db] p-3 shrink-0 leading-relaxed">
+                  Spotting the hidden visual cues of disease.
+                </div>
+              </div>
+
+              <div className="flex-1 border border-[#4a5d23] p-6 flex flex-col bg-[#4a5d23] text-stone-100">
+                <div className="text-[#a3b87a] font-mono text-xl mb-6 border-b border-[#5f7434] pb-3 shrink-0">
+                  03. You Take Action
+                </div>
+                <ShieldCheck className="w-10 h-10 text-[#c2d49a] mb-4 shrink-0" />
+                <h4 className="font-bold text-2xl text-white tracking-tight mb-3 shrink-0">
+                  Get The Map
+                </h4>
+                <p className="text-[#c2d49a] text-lg font-light leading-relaxed mb-4 flex-1 overflow-hidden">
+                  You receive a clear map pointing exactly to which trees are in trouble. Cull the sick palms immediately and save the healthy ones.
+                </p>
+                <div className="mt-auto font-mono text-xs text-[#4a5d23] bg-[#c2d49a] p-3 shrink-0 leading-relaxed">
+                  Precise removal. Less spreading. Better harvest.
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'value_farmer':
+        return (
+          <div className="h-full flex flex-col p-12 bg-[#f4f1ea]">
+            <div className="flex items-start justify-between mb-8 shrink-0">
+              <h2 className="text-5xl font-black text-stone-900 tracking-tighter leading-none">
+                what it means for you.
+              </h2>
+            </div>
+
+            <div className="flex gap-8 flex-1 min-h-0">
+              {/* LEFT COLUMN */}
+              <div className="w-[45%] flex flex-col gap-6 h-full border border-stone-300 bg-white p-8">
+                <Leaf className="w-12 h-12 text-[#4a5d23] mb-2" />
+                <h3 className="font-bold text-3xl text-stone-900 leading-tight mb-4">
+                  Protecting Your Livelihood
+                </h3>
+                <p className="text-lg text-stone-600 font-light leading-relaxed mb-6">
+                  Every tree you lose is money out of your pocket for years to come. By identifying sick trees early, you can surgically remove them and treat the surroundings, preventing the disease from jumping to your healthy, high-yield palms.
+                </p>
+                
+                <div className="bg-[#f4f1ea] border-l-4 border-[#8b5a2b] p-4 mt-auto">
+                  <h4 className="font-bold text-lg text-stone-800 mb-2">Be Replant-Ready</h4>
+                  <p className="text-sm text-stone-600 leading-relaxed">
+                    Our reports provide the exact data needed if you are applying for PSR (Peremajaan Sawit Rakyat) replanting funds. Hand them the map, prove the need, and get funded faster.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN */}
+              <div className="w-[55%] flex flex-col gap-6 h-full">
+                <div className="bg-white border border-stone-300 p-6 flex-1 flex flex-col min-h-0">
+                  <h3 className="font-bold tracking-tight uppercase font-mono text-sm text-stone-800 mb-6 shrink-0 leading-none">
+                    How you can get started
+                  </h3>
+                  <div className="flex gap-6 flex-1 min-h-0">
+                    <div className="flex-1 border-t-2 border-[#4a5d23] pt-4 flex flex-col bg-[#f9fafa] -mx-3 px-3 pb-3">
+                      <div className="text-[#4a5d23] text-[11px] uppercase tracking-widest font-mono mb-2 flex justify-between items-center leading-none">
+                        <span>Individual Farm</span>
+                      </div>
+                      <div className="text-2xl font-black text-stone-900 leading-none mb-1">
+                        Pay-Per-Scan
+                      </div>
+                      <div className="text-xs text-stone-500 font-mono mb-4 leading-none">
+                        Flexible Pricing
+                      </div>
+                      <ul className="text-sm text-stone-600 space-y-2 font-light flex-1 overflow-hidden">
+                        <li>• Only pay when you need an inspection</li>
+                        <li>• Fast turnaround for the PDF report</li>
+                        <li>• No long-term commitment</li>
+                      </ul>
+                    </div>
+
+                    <div className="flex-1 border-t-2 border-stone-300 pt-4 flex flex-col">
+                      <div className="text-stone-500 text-[11px] uppercase tracking-widest font-mono mb-2 leading-none">
+                        Through Your Koperasi
+                      </div>
+                      <div className="text-2xl font-black text-stone-900 leading-none mb-1">
+                        Group Coverage
+                      </div>
+                      <div className="text-xs text-stone-500 font-mono mb-4 leading-none">
+                        Best Value
+                      </div>
+                      <ul className="text-sm text-stone-600 space-y-2 font-light flex-1 overflow-hidden">
+                        <li>• We fly the entire union's land together</li>
+                        <li>• Greatly reduced cost per hectare</li>
+                        <li>• Get regular monthly health checkups</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-stone-900 p-5 border border-stone-800 shrink-0 text-center">
+                  <h3 className="font-mono text-xs uppercase tracking-widest text-[#a3b87a] mb-2 leading-none">
+                    Next Step
+                  </h3>
+                  <p className="text-sm text-stone-400 font-light leading-relaxed">
+                    Chat with us today to schedule your first flight and see the health of your plot.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
       default:
         return <div>Slide missing</div>;
     }
@@ -500,8 +741,22 @@ export default function App() {
         </div>
 
         <div className="h-16 bg-stone-900 border-t border-stone-800 flex items-center justify-between px-8 shrink-0">
-          <div className="font-mono text-xs text-stone-400 uppercase tracking-widest">
-            Basalbuddy
+          <div className="font-mono text-xs text-stone-400 uppercase tracking-widest flex items-center gap-4">
+            <span>Basalbuddy</span>
+            <div className="flex bg-stone-800 rounded p-1">
+              <button 
+                onClick={() => { setAudience('investor'); setCurrentSlide(0); }}
+                className={`px-3 py-1 rounded text-[10px] transition-colors ${audience === 'investor' ? 'bg-stone-700 text-white' : 'text-stone-400 hover:text-white'}`}
+              >
+                Investor
+              </button>
+              <button 
+                onClick={() => { setAudience('farmer'); setCurrentSlide(0); }}
+                className={`px-3 py-1 rounded text-[10px] transition-colors ${audience === 'farmer' ? 'bg-stone-700 text-white' : 'text-stone-400 hover:text-white'}`}
+              >
+                Farmer
+              </button>
+            </div>
           </div>
           <div className="flex items-center gap-6">
             <button
