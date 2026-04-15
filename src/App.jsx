@@ -24,6 +24,7 @@ const investorSlides = [
   { id: 'title' },
   { id: 'problem' },
   { id: 'solution' },
+  { id: 'market_validation' },
   { id: 'business_model' },
   { id: 'credits' },
 ];
@@ -296,6 +297,92 @@ export default function App() {
                 </p>
                 <div className="mt-auto font-mono text-xs text-[#4a5d23] bg-[#c2d49a] p-3 shrink-0 leading-relaxed">
                   {t("// Targeted culling minimizes collateral yield loss.", "// Penebangan yang ditargetkan meminimalkan hilangnya hasil.")}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'market_validation':
+        return (
+          <div className="h-full flex flex-col p-12 bg-white">
+            <div className="flex items-start justify-between mb-8 shrink-0">
+              <h2 className="text-5xl font-black text-stone-900 tracking-tighter leading-none">
+                {t("voice of the farmers.", "suara para petani.")}
+              </h2>
+              <span
+                className="font-mono text-sm tracking-widest text-[#8b5a2b] uppercase border border-[#8b5a2b] px-3 py-1.5 shrink-0 whitespace-nowrap"
+                style={{ lineHeight: 1 }}
+              >
+                {t("Market Validation", "Validasi Pasar")}
+              </span>
+            </div>
+
+            <div className="flex gap-8 flex-1 min-h-0">
+              {/* Left Side: Survey Stats */}
+              <div className="w-1/3 flex flex-col gap-6">
+                <div className="bg-[#f4f1ea] p-6 border border-stone-300">
+                  <div className="text-4xl font-black text-[#8b5a2b] mb-1">30</div>
+                  <div className="text-sm font-mono text-stone-500 uppercase tracking-widest leading-none mb-4">
+                    {t("Plantations Surveyed", "Perkebunan Disurvei")}
+                  </div>
+                  <p className="text-stone-600 font-light text-sm">
+                    {t("Spanning from 2ha independent smallholders up to 28,000ha enterprise operators.", "Mencakup dari 2ha petani mandiri hingga 28.000ha kebun perusahaan.")}
+                  </p>
+                </div>
+                
+                <div className="bg-[#f4f1ea] p-6 border border-stone-300">
+                  <div className="text-4xl font-black text-[#8b5a2b] mb-1">56%</div>
+                  <div className="text-sm font-mono text-stone-500 uppercase tracking-widest leading-none mb-4">
+                    {t("Ganoderma Infection", "Infeksi Ganoderma")}
+                  </div>
+                  <p className="text-stone-600 font-light text-sm">
+                    {t("Over half have experienced catastrophic yield loss from Basal Stem Rot.", "Lebih dari setengahnya mengalami kehilangan hasil panen akibat Busuk Pangkal Batang.")}
+                  </p>
+                </div>
+
+                <div className="bg-[#4a5d23] text-white p-6 border border-[#5f7434]">
+                   <div className="text-4xl font-black text-[#c2d49a] mb-1">93%</div>
+                   <div className="text-sm font-mono text-[#c2d49a] uppercase tracking-widest leading-none mb-4">
+                     {t("Manual Inspection", "Inspeksi Manual")}
+                   </div>
+                   <p className="text-stone-200 font-light text-sm">
+                     {t("Rely on walking the plot. By the time they see yellowing fronds, the tree is already dead.", "Mengandalkan patroli jalan kaki. Saat daun menguning, pohon sudah mati.")}
+                   </p>
+                </div>
+              </div>
+
+              {/* Right Side: Quotes & Findings */}
+              <div className="w-2/3 flex flex-col gap-6">
+                <div className="border-t-2 border-stone-900 pt-6 flex-1 flex flex-col">
+                   <h3 className="text-2xl font-bold text-stone-900 tracking-tight mb-6">
+                     {t("The Real Problem: Too Late to Save", "Masalah Sebenarnya: Terlambat Diselamatkan")}
+                   </h3>
+                   <div className="space-y-6 flex-1">
+                     <div className="bg-stone-50 p-6 border-l-4 border-[#8b5a2b]">
+                       <p className="text-stone-600 italic text-lg mb-4">
+                         "{t("When do I realize the tree is sick? When the leaves wither or start yellowing... Sometimes the tree just breaks and falls suddenly.", "Kapan baru sadar kalau pohon sakit? Saat daun mulai layu atau menguning... Tau-tau patah pohonnya rubuh.")}"
+                       </p>
+                       <div className="text-sm font-mono text-stone-400 uppercase tracking-widest">
+                         — {t("Surveyed Independent Farmers", "Petani Mandiri yang Disurvei")}
+                       </div>
+                     </div>
+                     
+                     <div className="bg-stone-50 p-6 border-l-4 border-[#4a5d23]">
+                       <p className="text-stone-600 italic text-lg mb-4">
+                         "{t("Walking to check trees is too slow on large plots. Drones can give biased data unless it specifically sees Ganoderma. If there's an effective and cheap method, it's great for saving the palms.", "Bukanlah hal yang sulit dalam mendeteksi ganoderma secara kasat mata, yang terpenting adalah cara mengobati dan deteksi dini... Jika ada metode dan solusi efektif serta murah tentu bagus untuk menyelamatkan sawit.")}"
+                       </p>
+                       <div className="text-sm font-mono text-stone-400 uppercase tracking-widest">
+                         — {t("Estate Managers & Co-op Leads", "Manajer Kebun & Pengurus Koperasi")}
+                       </div>
+                     </div>
+                     <div className="space-y-6"></div>
+                   </div>
+
+                   <div className="bg-stone-900 p-6 text-center mt-auto flex items-center justify-between">
+                     <span className="text-xl font-medium text-white">{t("Interest in Early Detection Mapping", "Tertarik dengan Pemetaan Deteksi Dini")}</span>
+                     <span className="text-3xl font-black text-[#c2d49a]">~83%</span>
+                   </div>
                 </div>
               </div>
             </div>
